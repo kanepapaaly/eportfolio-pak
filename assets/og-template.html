@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8" />
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500&family=Inter:wght@400;500&display=swap" rel="stylesheet" />
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1200px; height: 630px; }
+  body {
+    position: relative;
+    overflow: hidden;
+    background: #0a0e0c;
+    color: #e9efeb;
+    font-family: "Inter", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+  .grid {
+    position: absolute; inset: 0;
+    background-image:
+      linear-gradient(to right, rgba(233,239,235,0.045) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(233,239,235,0.045) 1px, transparent 1px);
+    background-size: 56px 56px;
+    -webkit-mask-image: radial-gradient(ellipse 80% 90% at 30% 20%, #000 30%, transparent 100%);
+            mask-image: radial-gradient(ellipse 80% 90% at 30% 20%, #000 30%, transparent 100%);
+  }
+  .glow {
+    position: absolute; top: -220px; left: -120px;
+    width: 720px; height: 720px; border-radius: 9999px;
+    background: rgba(62,207,142,0.20);
+    filter: blur(140px);
+  }
+  .frame { position: relative; height: 100%; padding: 64px 72px; display: flex; flex-direction: column; justify-content: space-between; }
+  .top { display: flex; align-items: center; justify-content: space-between; }
+  .brand { display: flex; align-items: center; gap: 14px; font-family: "JetBrains Mono", monospace; font-size: 22px; color: #cdd6d1; }
+  .mark { width: 42px; height: 42px; display: grid; place-items: center; border: 1.5px solid #33433b; border-radius: 10px; color: #3ecf8e; font-size: 24px; }
+  .chip {
+    display: inline-flex; align-items: center; gap: 10px;
+    border: 1px solid #33433b; border-radius: 9999px;
+    padding: 10px 18px; font-family: "JetBrains Mono", monospace; font-size: 18px; color: #9aa8a1;
+    background: rgba(20,29,24,0.6);
+  }
+  .dot { width: 10px; height: 10px; border-radius: 9999px; background: #3ecf8e; box-shadow: 0 0 12px 2px rgba(62,207,142,0.7); }
+  .role { font-family: "JetBrains Mono", monospace; font-size: 20px; letter-spacing: 0.14em; text-transform: uppercase; color: #7c8a83; }
+  h1 { font-family: "Space Grotesk", sans-serif; font-weight: 600; font-size: 96px; line-height: 1.0; letter-spacing: -0.02em; margin-top: 20px; }
+  .tagline { font-family: "Space Grotesk", sans-serif; font-weight: 500; font-size: 40px; margin-top: 22px; letter-spacing: -0.01em; }
+  .tagline b { color: #3ecf8e; font-weight: 600; }
+  .bottom { display: flex; align-items: center; justify-content: space-between; }
+  .coords { font-family: "JetBrains Mono", monospace; font-size: 18px; color: #6a7671; letter-spacing: 0.04em; }
+  .avail { font-family: "Inter", sans-serif; font-size: 20px; color: #9aa8a1; }
+  .avail b { color: #e9efeb; font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="grid"></div>
+  <div class="glow"></div>
+  <div class="frame">
+    <div class="top">
+      <div class="brand"><span class="mark">/</span> papaalykane</div>
+      <div class="chip"><span class="dot"></span> Disponible · 2026 / 2027</div>
+    </div>
+
+    <div>
+      <div class="role">Étudiant M1 Informatique · Université Gustave Eiffel</div>
+      <h1>Papa Aly Kane</h1>
+      <div class="tagline">IA, Data &amp; <b>Développement Full-Stack</b></div>
+    </div>
+
+    <div class="bottom">
+      <div class="avail">Recherche <b>alternance 2026 / 2027</b> · Des produits réels, livrés.</div>
+      <div class="coords">14.69° N · 17.44° W</div>
+    </div>
+  </div>
+</body>
+</html>
