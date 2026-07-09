@@ -76,7 +76,7 @@ export const dictionary = {
     },
     footer: {
       built: "Conçu et développé avec Next.js, TypeScript & Tailwind.",
-      location: "Île-de-France, France · originaire de Kaolack, Sénégal",
+      location: "Île-de-France, France · originaire du Sénégal",
       rights: "Tous droits réservés.",
     },
     theme: {
