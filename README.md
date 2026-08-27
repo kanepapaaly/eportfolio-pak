@@ -1,6 +1,6 @@
 # E-Portfolio · Papa Aly Kane
 
-Portfolio personnel bilingue (FR/EN) pour une recherche d'alternance 2026/2027 en IA, Data et développement Full-Stack.
+Portfolio personnel bilingue (FR/EN) : IA, Data et développement Full-Stack. En ligne sur [eportfolio-pak.vercel.app](https://eportfolio-pak.vercel.app).
 
 **Stack :** Next.js 16 (App Router) · TypeScript · Tailwind CSS v4 · Framer Motion · next-themes.
 

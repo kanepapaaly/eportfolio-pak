@@ -16,9 +16,4 @@ export const profile = {
     fr: "Île-de-France, France",
     en: "Île-de-France, France",
   } as Localized,
-  /** Discreet Senegal reference: Kaolack coordinates used as a mono easter egg. */
-  origin: {
-    label: { fr: "Kaolack, Sénégal", en: "Kaolack, Senegal" } as Localized,
-    coordinates: "14.15° N · 16.07° W",
-  },
 } as const;

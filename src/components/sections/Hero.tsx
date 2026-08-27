@@ -27,7 +27,7 @@ export function Hero() {
     { k: "focus", v: "IA · Data · Full-Stack" },
     { k: "building", v: ":flex → App Store" },
     { k: locale === "fr" ? "études" : "studying", v: "M1 · Gustave Eiffel" },
-    { k: locale === "fr" ? "basé" : "based", v: "Île-de-France ↔ Kaolack" },
+    { k: locale === "fr" ? "basé" : "based", v: "Île-de-France" },
   ];
 
   return (
@@ -145,9 +145,6 @@ export function Hero() {
                 </dd>
               </div>
             </dl>
-            <div className="border-t border-border px-4 py-2.5 font-mono text-[0.68rem] tracking-wide text-ink-faint">
-              {profile.origin.coordinates}
-            </div>
           </div>
         </motion.div>
       </motion.div>

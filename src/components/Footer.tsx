@@ -68,11 +68,7 @@ export function Footer() {
 
         <div className="flex flex-col gap-2 border-t border-border pt-6 font-mono text-[0.7rem] tracking-wide text-ink-faint sm:flex-row sm:items-center sm:justify-between">
           <span>{t.footer.location}</span>
-          <span className="flex items-center gap-3">
-            <span>{profile.origin.coordinates}</span>
-            <span aria-hidden="true">·</span>
-            <span>© {year} {profile.name}</span>
-          </span>
+          <span>© {year} {profile.name}</span>
         </div>
       </div>
     </footer>

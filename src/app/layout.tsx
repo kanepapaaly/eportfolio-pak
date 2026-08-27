@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s · Papa Aly Kane",
   },
   description:
-    "Étudiant M1 Informatique en recherche d'alternance 2026/2027 en IA, Data et développement Full-Stack. Des produits réels, livrés et testés par de vrais utilisateurs.",
+    "Étudiant M1 Informatique, disponible en 2026 / 2027 en IA, Data et développement Full-Stack. Des produits réels, livrés et testés par de vrais utilisateurs.",
   keywords: [
     "Papa Aly Kane",
     "alternance",
@@ -53,10 +53,10 @@ export const metadata: Metadata = {
     siteName: "Papa Aly Kane",
     title: "Papa Aly Kane · IA, Data & Développement Full-Stack",
     description:
-      "En recherche d'alternance 2026/2027. Des produits réels, livrés et testés par de vrais utilisateurs, du mobile au Machine Learning.",
+      "Disponible en 2026 / 2027. Des produits réels, livrés et testés par de vrais utilisateurs, du mobile au Machine Learning.",
     images: [
       {
-        url: "/og.png",
+        url: "/og.png?v=2",
         width: 1200,
         height: 630,
         alt: "Papa Aly Kane · IA, Data & Développement Full-Stack",
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Papa Aly Kane · IA, Data & Développement Full-Stack",
     description:
-      "En recherche d'alternance 2026/2027. Des produits réels, livrés et testés par de vrais utilisateurs.",
-    images: ["/og.png"],
+      "Disponible en 2026 / 2027. Des produits réels, livrés et testés par de vrais utilisateurs.",
+    images: ["/og.png?v=2"],
   },
   robots: { index: true, follow: true },
 };

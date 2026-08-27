@@ -69,7 +69,7 @@ export const dictionary = {
     footer: {
       built: "Conçu et développé avec Next.js, TypeScript & Tailwind.",
       source: "Code source de ce site",
-      location: "Île-de-France, France · originaire du Sénégal",
+      location: "Île-de-France, France",
       rights: "Tous droits réservés.",
     },
     theme: {
@@ -135,7 +135,7 @@ export const dictionary = {
     footer: {
       built: "Designed and built with Next.js, TypeScript & Tailwind.",
       source: "Source code of this site",
-      location: "Île-de-France, France · from Kaolack, Senegal",
+      location: "Île-de-France, France",
       rights: "All rights reserved.",
     },
     theme: {
