@@ -59,9 +59,10 @@ vercel --prod   # production
 
 ## À finaliser
 - [x] Captures d'écran de `:flex` (`public/projects/flex/`).
-- [x] Lien App Store de `:flex` dans `links` (`src/data/projects.ts`), en secondaire derrière le site du projet.
-- [ ] Lien store de `Campus` une fois l'app publiée.
-- [ ] Captures d'écran d'`AC Barber` (`public/projects/acbarber/`, puis remplir `images`).
+- [x] Liens App Store de `:flex` et `Campus` dans `links` (`src/data/projects.ts`), en secondaire derrière le site du projet.
+- [ ] Lien Play Store des apps quand elles y seront (le site du projet le porte déjà, donc rien d'urgent ici).
 - [ ] Domaine personnalisé (ex. `papaalykane.dev`) + `NEXT_PUBLIC_SITE_URL`.
+
+Les projets web (`AC Barber`) n'ont pas de galerie : le lien vers le site suffit, les captures sont réservées aux apps mobiles.
 
 Le contact se fait par email, téléphone et LinkedIn : il n'y a volontairement pas de formulaire, donc aucun service d'envoi (Formspree, Resend) à brancher.

@@ -97,7 +97,7 @@ export const projects: Project[] = [
       fr: "App mobile · Productivité étudiante",
       en: "Mobile app · Student productivity",
     },
-    period: { fr: "Janvier à mars 2026", en: "Jan to Mar 2026" },
+    period: { fr: "Depuis janvier 2026", en: "Since Jan 2026" },
     tagline: {
       fr: "Un seul endroit pour l'emploi du temps, les tâches et les notes, même hors-ligne.",
       en: "One place for schedule, tasks and notes, even offline.",
@@ -111,20 +111,25 @@ export const projects: Project[] = [
       en: "Modular full-stack architecture from scratch. FastAPI REST API for schedule sync and persistence, React Native front with offline mode. Designed from day one to scale toward collaborative features.",
     },
     result: {
-      fr: "Application fonctionnelle avec parsing ICS robuste, mode hors-ligne opérationnel et architecture prête à accueillir de nouvelles fonctionnalités.",
-      en: "Working app with robust ICS parsing, functional offline mode and an architecture ready for new features.",
+      fr: "Publiée sur l'App Store (version 1.1.0) : parsing ICS robuste, mode hors-ligne opérationnel et architecture prête à accueillir de nouvelles fonctionnalités.",
+      en: "Shipped on the App Store (version 1.1.0): robust ICS parsing, working offline mode and an architecture ready for new features.",
     },
     proves: {
       fr: "Que je conçois des architectures full-stack propres et évolutives, pas juste du code qui marche une fois.",
       en: "That I design clean, scalable full-stack architectures, not just code that works once.",
     },
     stack: ["React Native", "FastAPI", "Python", "SQLite", "ICS / ADE"],
-    statusTag: { fr: "Fonctionnel", en: "Working build" },
+    statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
       {
         label: { fr: "Site web", en: "Website" },
         href: "https://www.campus-app.app",
         kind: "primary",
+      },
+      {
+        label: { fr: "App Store", en: "App Store" },
+        href: "https://apps.apple.com/app/campus-agenda-etudiant/id6765494880",
+        kind: "external",
       },
     ],
     images: [
