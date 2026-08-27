@@ -39,6 +39,16 @@ const contactChannels = [
       </>
     ),
   },
+  {
+    id: "github",
+    labelKey: "githubLabel" as const,
+    value: profile.githubHandle,
+    href: profile.github,
+    external: true,
+    icon: (
+      <path d="M9 19c-4 1.3-4-2-5.5-2.5M15 21v-3.3c0-.9.2-1.6-.4-2.2 2.5-.3 5-1.3 5-5.5a4.2 4.2 0 00-1.2-3 3.9 3.9 0 00-.1-3s-1-.3-3.2 1.2a11 11 0 00-5.7 0C6.2 3.7 5.2 4 5.2 4a3.9 3.9 0 00-.1 3A4.2 4.2 0 004 10c0 4.2 2.5 5.2 5 5.5-.6.6-.6 1.2-.5 2.2V21" />
+    ),
+  },
 ];
 
 export function Contact() {
@@ -57,7 +67,7 @@ export function Contact() {
           lede={t.contact.lede}
         />
 
-        <Reveal className="mt-14 grid gap-4 sm:grid-cols-3">
+        <Reveal className="mt-14 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
           {contactChannels.map((channel) => (
             <a
               key={channel.id}

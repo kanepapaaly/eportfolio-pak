@@ -21,7 +21,18 @@ export function Footer() {
               </span>
               {profile.name}
             </a>
-            <p className="mt-3 max-w-sm text-sm text-ink-muted">{t.footer.built}</p>
+            <p className="mt-3 max-w-sm text-sm text-ink-muted">
+              {t.footer.built}{" "}
+              <a
+                href={profile.githubRepo}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="underline decoration-border underline-offset-4 transition-colors hover:text-mint-strong hover:decoration-mint"
+              >
+                {t.footer.source}
+              </a>
+              .
+            </p>
           </div>
 
           <div className="flex flex-wrap gap-x-6 gap-y-2 font-mono text-xs text-ink-muted">
@@ -35,6 +46,14 @@ export function Footer() {
               className="transition-colors hover:text-mint-strong"
             >
               LinkedIn
+            </a>
+            <a
+              href={profile.github}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="transition-colors hover:text-mint-strong"
+            >
+              GitHub
             </a>
             <a
               href={profile.resumePath}
