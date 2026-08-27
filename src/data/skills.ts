@@ -22,6 +22,8 @@ export const skillGroups: SkillGroup[] = [
     skills: [
       "React Native",
       "Expo",
+      "React",
+      "TypeScript",
       "Angular",
       "Java / Spring Boot",
       "Django",
@@ -66,8 +68,26 @@ export const skillGroups: SkillGroup[] = [
     ],
   },
   {
-    id: "devops",
+    id: "network-concurrency",
     index: "04",
+    title: { fr: "Réseaux & concurrence", en: "Networking & concurrency" },
+    note: {
+      fr: "Programmation réseau en Java, du socket brut au serveur multi-clients.",
+      en: "Network programming in Java, from raw sockets to multi-client servers.",
+    },
+    skills: [
+      "Sockets TCP / UDP",
+      "I/O bloquantes & non bloquantes",
+      "Java NIO / Selector",
+      "Serveur multi-clients",
+      "Multithreading",
+      "Concurrence & synchronisation",
+      "Protocoles applicatifs",
+    ],
+  },
+  {
+    id: "devops",
+    index: "05",
     title: { fr: "Outils & DevOps", en: "Tooling & DevOps" },
     note: {
       fr: "Livrer proprement, pas juste coder.",

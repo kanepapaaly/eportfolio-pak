@@ -58,7 +58,10 @@ vercel --prod   # production
 - `NEXT_PUBLIC_SITE_URL` : **à définir uniquement si tu attaches un domaine custom** (ex. `https://papaalykane.dev`). Sans ça, l'URL de production Vercel est détectée automatiquement (`VERCEL_PROJECT_PRODUCTION_URL`), avec repli sur `papaalykane.vercel.app`. Cette URL alimente les balises Open Graph, `sitemap.xml` et `robots.txt`.
 
 ## À finaliser
-- [ ] Captures d'écran de `:flex` (`public/projects/flex/`).
-- [ ] Lien App Store dans `links` des projets une fois les apps publiées.
-- [ ] Brancher le formulaire de contact sur Formspree/Resend si besoin de recevoir les messages en ligne (actuellement `mailto:`, voir `handleSubmit` dans `src/components/sections/Contact.tsx`).
+- [x] Captures d'écran de `:flex` (`public/projects/flex/`).
+- [x] Lien App Store de `:flex` dans `links` (`src/data/projects.ts`), en secondaire derrière le site du projet.
+- [ ] Lien store de `Campus` une fois l'app publiée.
+- [ ] Captures d'écran d'`AC Barber` (`public/projects/acbarber/`, puis remplir `images`).
 - [ ] Domaine personnalisé (ex. `papaalykane.dev`) + `NEXT_PUBLIC_SITE_URL`.
+
+Le contact se fait par email, téléphone et LinkedIn : il n'y a volontairement pas de formulaire, donc aucun service d'envoi (Formspree, Resend) à brancher.

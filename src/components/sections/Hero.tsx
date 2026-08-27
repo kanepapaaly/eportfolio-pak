@@ -25,7 +25,7 @@ export function Hero() {
 
   const readout = [
     { k: "focus", v: "IA · Data · Full-Stack" },
-    { k: "building", v: ":flex → TestFlight" },
+    { k: "building", v: ":flex → App Store" },
     { k: locale === "fr" ? "études" : "studying", v: "M1 · Gustave Eiffel" },
     { k: locale === "fr" ? "basé" : "based", v: "Île-de-France ↔ Kaolack" },
   ];

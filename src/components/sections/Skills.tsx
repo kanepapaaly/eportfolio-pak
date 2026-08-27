@@ -29,7 +29,12 @@ export function Skills() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: "-60px" }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1], delay: i * 0.06 }}
-              className="group rounded-2xl border border-border bg-surface p-6 transition-colors duration-300 hover:border-mint sm:p-7"
+              className={`group rounded-2xl border border-border bg-surface p-6 transition-colors duration-300 hover:border-mint sm:p-7 ${
+                // An odd number of groups: the last card spans the full row.
+                skillGroups.length % 2 === 1 && i === skillGroups.length - 1
+                  ? "sm:col-span-2"
+                  : ""
+              }`}
             >
               <div className="flex items-baseline gap-3">
                 <span className="font-mono text-sm text-ink-faint transition-colors group-hover:text-mint-strong">

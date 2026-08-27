@@ -60,23 +60,34 @@ export const projects: Project[] = [
       en: "End-to-end product design and development: React Native/Expo app, FastAPI backend, Supabase database. I grounded the pedagogy on solid foundations (Krashen's comprehensible input, Ogden's pivot words, Paivio's dual coding), then made the technical calls: ElevenLabs speech synthesis, a TikTok-style \"discovery\" General Knowledge module with a karaoke audio player.",
     },
     result: {
-      fr: "En test externe TestFlight (build 1.0.0), distribué activement via WhatsApp et Instagram à de vrais utilisateurs. Stratégie de rétention par défis mensuels thématiques. Un produit vivant, pas une maquette.",
-      en: "In external TestFlight testing (build 1.0.0), actively distributed to real users via WhatsApp and Instagram. Retention driven by monthly themed challenges. A living product, not a mockup.",
+      fr: "Publiée sur l'App Store après une phase de test TestFlight, et utilisée par de vrais apprenants. Rétention travaillée par défis mensuels thématiques. Un produit vivant, pas une maquette.",
+      en: "Shipped on the App Store after a TestFlight testing phase, and used by real learners. Retention driven by monthly themed challenges. A living product, not a mockup.",
     },
     proves: {
       fr: "Que je peux porter un produit du concept jusqu'à de vrais utilisateurs, avec des choix pédagogiques et techniques que je sais justifier.",
       en: "That I can carry a product from concept to real users, with pedagogical and technical choices I can defend.",
     },
     stack: ["React Native", "Expo", "FastAPI", "Supabase", "PostgreSQL", "ElevenLabs"],
-    statusTag: { fr: "En test · TestFlight", en: "Testing · TestFlight" },
+    statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
       {
         label: { fr: "Site web", en: "Website" },
         href: "https://www.flex-app.app",
         kind: "primary",
       },
+      {
+        label: { fr: "App Store", en: "App Store" },
+        href: "https://apps.apple.com/app/flex-apprendre-langlais/id6785300394",
+        kind: "external",
+      },
     ],
-    images: [],
+    images: [
+      { src: "/projects/flex/accueil.png", alt: { fr: "Accueil :flex avec série et XP de la semaine", en: ":flex home screen with streak and weekly XP" } },
+      { src: "/projects/flex/challenge.png", alt: { fr: "Challenge à trous chronométré", en: "Timed fill-in-the-blank challenge" } },
+      { src: "/projects/flex/resultat.png", alt: { fr: "Écran de résultat d'un challenge", en: "Challenge results screen" } },
+      { src: "/projects/flex/culture.png", alt: { fr: "Module Culture Générale en lecture karaoké", en: "General Knowledge module in karaoke reading mode" } },
+      { src: "/projects/flex/profil-nuit.png", alt: { fr: "Profil et statistiques en thème sombre", en: "Profile and stats in dark theme" } },
+    ],
     featured: true,
   },
   {
@@ -123,6 +134,45 @@ export const projects: Project[] = [
       { src: "/projects/campus/notes.png", alt: { fr: "Prise de notes", en: "Note taking" } },
     ],
     featured: true,
+  },
+  {
+    id: "acbarber",
+    name: "AC Barber",
+    kind: {
+      fr: "Web · Prise de rendez-vous",
+      en: "Web · Online booking",
+    },
+    period: { fr: "Depuis mars 2026", en: "Since Mar 2026" },
+    tagline: {
+      fr: "Un coiffeur à domicile qui remplit son planning sans décrocher son téléphone.",
+      en: "A home-visit barber who fills his schedule without picking up the phone.",
+    },
+    problem: {
+      fr: "Un coiffeur à domicile prenait tous ses rendez-vous par appels et messages : créneaux oubliés, doubles réservations, allers-retours permanents. AC Barber met le planning en ligne : le client réserve en quelques secondes, sans créer de compte, et le coiffeur garde la main sur ses disponibilités.",
+      en: "A home-visit barber was booking everything by calls and messages: forgotten slots, double bookings, endless back and forth. AC Barber puts the schedule online: clients book in seconds without creating an account, and the barber keeps full control of his availability.",
+    },
+    role: {
+      fr: "Produit livré seul, du schéma de base de données à la mise en production sur son propre domaine. Front React/TypeScript, API FastAPI, PostgreSQL Supabase, espace admin protégé par JWT pour ouvrir des créneaux ou bloquer une période. Emails transactionnels automatiques via Resend : confirmation, rappels, annulation, avec un lien unique qui permet de modifier son rendez-vous sans compte.",
+      en: "Shipped solo, from database schema to production on its own domain. React/TypeScript front, FastAPI backend, Supabase PostgreSQL, JWT-protected admin area to open slots or block a period. Automatic transactional emails via Resend: confirmation, reminders, cancellation, with a unique link that lets clients change their booking without an account.",
+    },
+    result: {
+      fr: "En ligne sur acbarber.fr et utilisé au quotidien par un vrai professionnel et ses clients. Le téléphone n'est plus le point de passage obligé.",
+      en: "Live at acbarber.fr and used daily by a real professional and his clients. The phone is no longer the mandatory step.",
+    },
+    proves: {
+      fr: "Que je sais livrer un service en production pour un client réel : hébergement, domaine, emails, sécurité de l'espace admin, et le support qui va avec.",
+      en: "That I can ship a production service for a real client: hosting, domain, emails, admin security, and the support that comes with it.",
+    },
+    stack: ["React", "TypeScript", "Vite", "Tailwind", "FastAPI", "PostgreSQL / Supabase", "Resend"],
+    statusTag: { fr: "En production", en: "In production" },
+    links: [
+      {
+        label: { fr: "Voir le site", en: "Visit the site" },
+        href: "https://www.acbarber.fr",
+        kind: "primary",
+      },
+    ],
+    images: [],
   },
   {
     id: "aicodementor",
