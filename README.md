@@ -20,7 +20,7 @@ Le contenu est **piloté par les données** : pour mettre à jour le site, on to
 
 | Fichier | Contenu |
 |---|---|
-| `src/data/projects.ts` | Projets (problème, rôle, résultat, stack, images, liens), FR + EN |
+| `src/data/projects.ts` | Projets (problème, rôle, résultat, stack, chiffres, images, liens), FR + EN |
 | `src/data/skills.ts` | Compétences par catégorie |
 | `src/data/experience.ts` | Formation + expérience |
 | `src/data/profile.ts` | Coordonnées, liens, chemin du CV |
@@ -32,8 +32,14 @@ Sections dans `src/components/sections/`, assets publics dans `public/` (CV, cap
 1. Ajouter une entrée dans `src/data/projects.ts`.
 2. Déposer les captures dans `public/projects/<id>/` et remplir le tableau `images` (la galerie s'affiche automatiquement dès qu'il y a au moins une image).
 
+### Mettre à jour les chiffres d'usage
+Chaque projet accepte un tableau `metrics` (`src/data/projects.ts`) : `{ value: "500+", label: { fr: "…", en: "…" } }`. Les tuiles s'affichent automatiquement, une à trois par projet, et le bloc disparaît si `metrics` est absent. Les valeurs sont des chaînes déjà formatées : elles se relisent à la main, on n'en calcule aucune.
+
 ### Régénérer l'image Open Graph
 Le gabarit est dans `assets/og-template.html` (1200×630). L'ouvrir dans un navigateur et exporter en PNG vers `public/og.png`.
+
+## Analytics
+`@vercel/analytics` est branché dans `src/app/layout.tsx`. Il faut l'activer une fois côté Vercel : projet → onglet **Analytics** → **Enable**. Gratuit, sans cookie, et il indique quand une entreprise consulte le portfolio après une candidature.
 
 ## Déploiement sur Vercel
 

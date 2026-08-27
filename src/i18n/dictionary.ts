@@ -22,7 +22,7 @@ export const dictionary = {
       resume: "CV",
     },
     hero: {
-      status: "Disponible pour une alternance 2026 / 2027",
+      status: "Disponible en 2026 / 2027",
       role: "Étudiant M1 Informatique · Université Gustave Eiffel",
       headline: "Je conçois des produits qui tiennent en production,",
       headlineAccent: "de la donnée à l'interface.",
@@ -42,7 +42,7 @@ export const dictionary = {
       educationKicker: "Parcours",
       educationTitle: "Formation & expérience",
       contactKicker: "Contact",
-      contactTitle: "Parlons de votre alternance",
+      contactTitle: "Parlons de votre projet",
     },
     education: {
       formation: "Formation",
@@ -59,11 +59,11 @@ export const dictionary = {
       viewCode: "Code source",
     },
     contact: {
-      lede: "Un poste, un projet, ou juste envie d'échanger ? Email, téléphone ou LinkedIn : je réponds vite.",
+      lede: "Un poste, une mission, ou juste envie d'échanger ? Email, téléphone ou LinkedIn : je réponds vite. Le CV répond au reste.",
       emailLabel: "Email",
       phoneLabel: "Téléphone",
       linkedinLabel: "LinkedIn",
-      availability: "Réponse sous 24 h · Île-de-France et télétravail",
+      availability: "Réponse sous 24 h · tout le détail est dans le CV",
     },
     footer: {
       built: "Conçu et développé avec Next.js, TypeScript & Tailwind.",
@@ -86,7 +86,7 @@ export const dictionary = {
       resume: "Resume",
     },
     hero: {
-      status: "Open to work for a 2026 / 2027 apprenticeship",
+      status: "Open to work in 2026 / 2027",
       role: "MSc Computer Science · Université Gustave Eiffel",
       headline: "I build products that hold up in production,",
       headlineAccent: "from data to interface.",
@@ -106,7 +106,7 @@ export const dictionary = {
       educationKicker: "Background",
       educationTitle: "Education & experience",
       contactKicker: "Contact",
-      contactTitle: "Let's talk about your apprenticeship",
+      contactTitle: "Let's talk about your project",
     },
     education: {
       formation: "Education",
@@ -123,11 +123,11 @@ export const dictionary = {
       viewCode: "Source code",
     },
     contact: {
-      lede: "A role, a project, or just a chat? Email, phone or LinkedIn: I reply fast.",
+      lede: "A role, a project, or just a chat? Email, phone or LinkedIn: I reply fast. The resume answers the rest.",
       emailLabel: "Email",
       phoneLabel: "Phone",
       linkedinLabel: "LinkedIn",
-      availability: "Reply within 24 h · Île-de-France and remote",
+      availability: "Reply within 24 h · the resume has the details",
     },
     footer: {
       built: "Designed and built with Next.js, TypeScript & Tailwind.",

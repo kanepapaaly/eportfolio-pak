@@ -25,6 +25,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const reduce = useReducedMotion();
   const idx = String(index + 1).padStart(2, "0");
   const hasImages = project.images.length > 0;
+  const metrics = project.metrics ?? [];
   const hasLinks = project.links.length > 0;
 
   return (
@@ -114,6 +115,23 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
               {tr(project.proves)}
             </p>
           </div>
+
+          {/* Usage figures: rendered only when the project has real ones */}
+          {metrics.length > 0 && (
+            <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
+              {metrics.map((metric) => (
+                <div
+                  key={metric.value + tr(metric.label)}
+                  className="flex h-full flex-col rounded-xl border border-border bg-bg px-4 py-3"
+                >
+                  <dt className="mono-label">{tr(metric.label)}</dt>
+                  <dd className="mt-auto pt-1.5 text-2xl font-semibold tracking-tight text-ink">
+                    {metric.value}
+                  </dd>
+                </div>
+              ))}
+            </dl>
+          )}
 
           {/* Gallery: rendered only when screenshots exist */}
           {hasImages && (

@@ -12,6 +12,12 @@ export type ProjectImage = {
   alt: Localized;
 };
 
+/** A single usage figure. Kept as a pre-formatted string: these are read, not computed. */
+export type ProjectMetric = {
+  value: string;
+  label: Localized;
+};
+
 export type Project = {
   id: string;
   /** Display name, kept identical across locales. */
@@ -30,6 +36,8 @@ export type Project = {
   /** The single "what it proves I can do" line. */
   proves: Localized;
   stack: string[];
+  /** Real usage figures. Omitted when the project has none to show. */
+  metrics?: ProjectMetric[];
   links: ProjectLink[];
   images: ProjectImage[];
   /** Featured projects get the largest cards, first. */
@@ -60,14 +68,19 @@ export const projects: Project[] = [
       en: "End-to-end product design and development: React Native/Expo app, FastAPI backend, Supabase database. I grounded the pedagogy on solid foundations (Krashen's comprehensible input, Ogden's pivot words, Paivio's dual coding), then made the technical calls: ElevenLabs speech synthesis, a TikTok-style \"discovery\" General Knowledge module with a karaoke audio player.",
     },
     result: {
-      fr: "Publiée sur l'App Store après une phase de test TestFlight, et utilisée par de vrais apprenants. Rétention travaillée par défis mensuels thématiques. Un produit vivant, pas une maquette.",
-      en: "Shipped on the App Store after a TestFlight testing phase, and used by real learners. Retention driven by monthly themed challenges. A living product, not a mockup.",
+      fr: "500 téléchargements en quatre semaines, sans un euro de publicité : un post sur X et du bouche-à-oreille. La fiche App Store convertit à 23 % quand la moyenne du store tourne entre 3 et 5 %. Aucun bug remonté à ce jour, les correctifs sont partis avant les utilisateurs.",
+      en: "500 downloads in four weeks with zero ad spend: one X post and word of mouth. The App Store page converts at 23% where the store average sits between 3 and 5%. No bug reported so far, fixes shipped ahead of users.",
     },
     proves: {
       fr: "Que je peux porter un produit du concept jusqu'à de vrais utilisateurs, avec des choix pédagogiques et techniques que je sais justifier.",
       en: "That I can carry a product from concept to real users, with pedagogical and technical choices I can defend.",
     },
     stack: ["React Native", "Expo", "FastAPI", "Supabase", "PostgreSQL", "ElevenLabs"],
+    metrics: [
+      { value: "500+", label: { fr: "téléchargements en 4 semaines", en: "downloads in 4 weeks" } },
+      { value: "300", label: { fr: "utilisateurs actifs", en: "active users" } },
+      { value: "23 %", label: { fr: "fiche App Store → installation", en: "App Store page → install" } },
+    ],
     statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
       {
@@ -111,14 +124,17 @@ export const projects: Project[] = [
       en: "Modular full-stack architecture from scratch. FastAPI REST API for schedule sync and persistence, React Native front with offline mode. Designed from day one to scale toward collaborative features.",
     },
     result: {
-      fr: "Publiée sur l'App Store (version 1.1.0) : parsing ICS robuste, mode hors-ligne opérationnel et architecture prête à accueillir de nouvelles fonctionnalités.",
-      en: "Shipped on the App Store (version 1.1.0): robust ICS parsing, working offline mode and an architecture ready for new features.",
+      fr: "Parti d'un besoin perso, publié sur l'App Store (version 1.1.0) et adopté par 150 étudiants par simple bouche-à-oreille : parsing ICS robuste, mode hors-ligne opérationnel, architecture prête pour de nouvelles fonctionnalités.",
+      en: "Started as a personal need, shipped on the App Store (version 1.1.0) and picked up by 150 students through word of mouth alone: robust ICS parsing, working offline mode, an architecture ready for new features.",
     },
     proves: {
       fr: "Que je conçois des architectures full-stack propres et évolutives, pas juste du code qui marche une fois.",
       en: "That I design clean, scalable full-stack architectures, not just code that works once.",
     },
     stack: ["React Native", "FastAPI", "Python", "SQLite", "ICS / ADE"],
+    metrics: [
+      { value: "150", label: { fr: "téléchargements", en: "downloads" } },
+    ],
     statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
       {
@@ -161,14 +177,18 @@ export const projects: Project[] = [
       en: "Shipped solo, from database schema to production on its own domain. React/TypeScript front, FastAPI backend, Supabase PostgreSQL, JWT-protected admin area to open slots or block a period. Automatic transactional emails via Resend: confirmation, reminders, cancellation, with a unique link that lets clients change their booking without an account.",
     },
     result: {
-      fr: "En ligne sur acbarber.fr et utilisé au quotidien par un vrai professionnel et ses clients. Le téléphone n'est plus le point de passage obligé.",
-      en: "Live at acbarber.fr and used daily by a real professional and his clients. The phone is no longer the mandatory step.",
+      fr: "Plus de 150 rendez-vous pris en ligne en cinq mois, sur acbarber.fr, par un vrai professionnel et ses clients. Le téléphone n'est plus le point de passage obligé.",
+      en: "More than 150 bookings taken online in five months at acbarber.fr, by a real professional and his clients. The phone is no longer the mandatory step.",
     },
     proves: {
       fr: "Que je sais livrer un service en production pour un client réel : hébergement, domaine, emails, sécurité de l'espace admin, et le support qui va avec.",
       en: "That I can ship a production service for a real client: hosting, domain, emails, admin security, and the support that comes with it.",
     },
     stack: ["React", "TypeScript", "Vite", "Tailwind", "FastAPI", "PostgreSQL / Supabase", "Resend"],
+    metrics: [
+      { value: "150+", label: { fr: "rendez-vous pris en ligne", en: "bookings taken online" } },
+      { value: "5 mois", label: { fr: "en production sans interruption", en: "in production without downtime" } },
+    ],
     statusTag: { fr: "En production", en: "In production" },
     links: [
       {
