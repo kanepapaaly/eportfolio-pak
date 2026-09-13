@@ -211,7 +211,7 @@ export const projects: Project[] = [
         state: "done",
       },
       {
-        label: { fr: "Plusieurs dépôts et langages : TypeScript, Java, C++", en: "Multiple repositories and languages: TypeScript, Java, C++" },
+        label: { fr: "Plusieurs dépôts et langages : TypeScript, Python, Java", en: "Multiple repositories and languages: TypeScript, Python, Java" },
         state: "done",
       },
       {
