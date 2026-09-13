@@ -3,7 +3,7 @@
 import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n";
-import type { Project } from "@/data/projects";
+import type { Project, RoadmapStep } from "@/data/projects";
 
 function LinkIcon({ kind }: { kind: Project["links"][number]["kind"] }) {
   if (kind === "code") {
@@ -26,6 +26,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
   const idx = String(index + 1).padStart(2, "0");
   const hasImages = project.images.length > 0;
   const metrics = project.metrics ?? [];
+  const roadmap = project.roadmap ?? [];
   const hasLinks = project.links.length > 0;
 
   return (
@@ -133,6 +134,37 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
             </dl>
           )}
 
+          {/* Roadmap: projects still being built show their steps instead of figures */}
+          {roadmap.length > 0 && (
+            <div className="mt-6 rounded-xl border border-border bg-bg px-4 py-4">
+              <p className="mono-label">{t.project.roadmap}</p>
+              <ol className="mt-3 space-y-2.5">
+                {roadmap.map((step) => {
+                  const stateLabel = {
+                    done: t.project.stepDone,
+                    current: t.project.stepCurrent,
+                    todo: t.project.stepTodo,
+                  }[step.state];
+                  return (
+                    <li key={step.label.en} className="flex items-start gap-3 text-sm leading-snug">
+                      <StepMarker state={step.state} />
+                      <span className={step.state === "todo" ? "text-ink-faint" : "text-ink"}>
+                        {tr(step.label)}
+                        {step.state === "current" ? (
+                          <span className="ml-2 font-mono text-[0.68rem] tracking-wide text-mint-strong">
+                            {stateLabel}
+                          </span>
+                        ) : (
+                          <span className="sr-only"> ({stateLabel})</span>
+                        )}
+                      </span>
+                    </li>
+                  );
+                })}
+              </ol>
+            </div>
+          )}
+
           {/* Gallery: rendered only when screenshots exist */}
           {hasImages && (
             <div className="mt-7 flex snap-x gap-4 overflow-x-auto pb-2 [scrollbar-width:thin]">
@@ -158,6 +190,26 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
       </div>
     </motion.article>
   );
+}
+
+function StepMarker({ state }: { state: RoadmapStep["state"] }) {
+  if (state === "done") {
+    return (
+      <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-mint text-[#06110b]" aria-hidden="true">
+        <svg viewBox="0 0 24 24" className="h-2.5 w-2.5" fill="none" stroke="currentColor" strokeWidth="3.5" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M5 12.5l4.5 4.5L19 7.5" />
+        </svg>
+      </span>
+    );
+  }
+  if (state === "current") {
+    return (
+      <span className="mt-px flex h-4 w-4 shrink-0 items-center justify-center rounded-full border border-mint" aria-hidden="true">
+        <span className="h-1.5 w-1.5 rounded-full bg-mint motion-safe:animate-pulse" />
+      </span>
+    );
+  }
+  return <span className="mt-px h-4 w-4 shrink-0 rounded-full border border-border-strong" aria-hidden="true" />;
 }
 
 function Block({ label, text }: { label: string; text: string }) {

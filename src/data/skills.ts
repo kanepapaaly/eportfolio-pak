@@ -37,8 +37,8 @@ export const skillGroups: SkillGroup[] = [
     index: "02",
     title: { fr: "Data & IA", en: "Data & AI" },
     note: {
-      fr: "De la donnée brute au modèle, et l'orchestration d'agents IA.",
-      en: "From raw data to model, plus AI-agent orchestration.",
+      fr: "De la donnée brute au modèle et aux agents IA, avec de l'open source dès que c'est possible.",
+      en: "From raw data to models and AI agents, open source whenever possible.",
     },
     skills: [
       "Python",
@@ -46,6 +46,8 @@ export const skillGroups: SkillGroup[] = [
       "PostgreSQL / MySQL",
       "Scikit-Learn",
       "Machine Learning",
+      "RAG & recherche hybride",
+      "LLM open source en local",
       "Orchestration d'agents IA",
       "Claude · Codex · Qwen · DeepSeek",
     ],

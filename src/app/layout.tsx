@@ -39,6 +39,8 @@ export const metadata: Metadata = {
     "développement full-stack",
     "React Native",
     "Machine Learning",
+    "RAG",
+    "open source",
     "FastAPI",
     "Spring Boot",
     "portfolio développeur",
