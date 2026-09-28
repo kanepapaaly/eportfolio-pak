@@ -37,8 +37,8 @@ export const skillGroups: SkillGroup[] = [
     index: "02",
     title: { fr: "Data & IA", en: "Data & AI" },
     note: {
-      fr: "De la donnée brute au modèle et aux agents IA, avec de l'open source dès que c'est possible.",
-      en: "From raw data to models and AI agents, open source whenever possible.",
+      fr: "De la donnée brute au modèle, jusqu'aux agents IA et au RAG, avec de l'open source dès que c'est possible.",
+      en: "From raw data to models, all the way to AI agents and RAG, open source whenever possible.",
     },
     skills: [
       "Python",
@@ -46,9 +46,9 @@ export const skillGroups: SkillGroup[] = [
       "PostgreSQL / MySQL",
       "Scikit-Learn",
       "Machine Learning",
-      // "RAG & recherche hybride", // à réactiver avec le projet Codelight
+      "RAG : découpage, embeddings, recherche hybride",
+      "Ollama · LangChain · Hugging Face",
       "LLM open source en local",
-      "Orchestration d'agents IA",
       "Claude · Codex · Qwen · DeepSeek",
     ],
   },
@@ -102,6 +102,21 @@ export const skillGroups: SkillGroup[] = [
       "GitHub / GitLab",
       "Linux / Shell",
       "JUnit",
+    ],
+  },
+  {
+    id: "method",
+    index: "06",
+    title: { fr: "Méthode", en: "How I work" },
+    note: {
+      fr: "Je choisis l'outil selon le problème : à la main quand il faut comprendre, avec l'IA quand il faut aller vite, et je relis tout.",
+      en: "I pick the tool for the problem: by hand when I need to understand, with AI when I need speed, and I review everything.",
+    },
+    skills: [
+      "Code écrit à la main",
+      "Lecture et revue de code",
+      "Orchestration d'agents IA",
+      "Développement assisté par IA",
     ],
   },
 ];
