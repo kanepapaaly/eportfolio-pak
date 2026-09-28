@@ -46,7 +46,7 @@ export const skillGroups: SkillGroup[] = [
       "PostgreSQL / MySQL",
       "Scikit-Learn",
       "Machine Learning",
-      "RAG & recherche hybride",
+      // "RAG & recherche hybride", // à réactiver avec le projet Codelight
       "LLM open source en local",
       "Orchestration d'agents IA",
       "Claude · Codex · Qwen · DeepSeek",

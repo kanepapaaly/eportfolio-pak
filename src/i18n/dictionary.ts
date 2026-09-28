@@ -36,7 +36,7 @@ export const dictionary = {
       projectsKicker: "Sélection de projets",
       projectsTitle: "Ce que je construis",
       projectsLede:
-        "Six projets, du produit mobile livré jusqu'au pipeline de Machine Learning et au RAG sur du code.",
+        "Cinq projets, du produit mobile livré jusqu'au pipeline de Machine Learning.",
       skillsKicker: "Compétences",
       skillsTitle: "La boîte à outils",
       educationKicker: "Parcours",
@@ -106,7 +106,7 @@ export const dictionary = {
       projectsKicker: "Selected work",
       projectsTitle: "What I build",
       projectsLede:
-        "Six projects, from a shipped mobile product to a Machine Learning pipeline and a RAG over code.",
+        "Five projects, from a shipped mobile product to a Machine Learning pipeline.",
       skillsKicker: "Skills",
       skillsTitle: "The toolbox",
       educationKicker: "Background",

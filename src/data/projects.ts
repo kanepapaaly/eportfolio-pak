@@ -52,6 +52,8 @@ export type Project = {
   featured?: boolean;
   /** Status chip label, e.g. "En production". */
   statusTag: Localized;
+  /** Kept in the data but not rendered, e.g. a project not ready to show yet. */
+  hidden?: boolean;
 };
 
 export const projects: Project[] = [
@@ -76,8 +78,8 @@ export const projects: Project[] = [
       en: "End-to-end product design and development: React Native/Expo app, FastAPI backend, Supabase database. I grounded the pedagogy on solid foundations (Krashen's comprehensible input, Ogden's pivot words, Paivio's dual coding), then made the technical calls: ElevenLabs speech synthesis, a TikTok-style \"discovery\" General Knowledge module with a karaoke audio player.",
     },
     result: {
-      fr: "500 téléchargements en quatre semaines, sans un euro de publicité : un post sur X et du bouche-à-oreille. La fiche App Store convertit à 23 % quand la moyenne du store tourne entre 3 et 5 %. Aucun bug remonté à ce jour, les correctifs sont partis avant les utilisateurs.",
-      en: "500 downloads in four weeks with zero ad spend: one X post and word of mouth. The App Store page converts at 23% where the store average sits between 3 and 5%. No bug reported so far, fixes shipped ahead of users.",
+      fr: "Plus de 1 800 téléchargements sur l'App Store en six semaines, dont plus de 1 300 utilisateurs actifs, sans un euro de publicité : un post sur X et du bouche-à-oreille. La fiche App Store convertit à 17,7 % quand la moyenne du store tourne entre 3 et 5 %. La version Android a passé les tests fermés et est en cours de validation par Google.",
+      en: "More than 1,800 downloads on the App Store in six weeks, including 1,300+ active users, with zero ad spend: one X post and word of mouth. The App Store page converts at 17.7% where the store average sits between 3 and 5%. The Android version has passed closed testing and is under review by Google.",
     },
     proves: {
       fr: "Que je peux porter un produit du concept jusqu'à de vrais utilisateurs, avec des choix pédagogiques et techniques que je sais justifier.",
@@ -85,9 +87,9 @@ export const projects: Project[] = [
     },
     stack: ["React Native", "Expo", "FastAPI", "Supabase", "PostgreSQL", "ElevenLabs"],
     metrics: [
-      { value: "500+", label: { fr: "téléchargements en 4 semaines", en: "downloads in 4 weeks" } },
-      { value: "300", label: { fr: "utilisateurs actifs", en: "active users" } },
-      { value: "23 %", label: { fr: "fiche App Store → installation", en: "App Store page → install" } },
+      { value: "1 800+", label: { fr: "téléchargements en 6 semaines", en: "downloads in 6 weeks" } },
+      { value: "1 300+", label: { fr: "utilisateurs actifs", en: "active users" } },
+      { value: "17,7 %", label: { fr: "fiche App Store → installation", en: "App Store page → install" } },
     ],
     statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
@@ -132,8 +134,8 @@ export const projects: Project[] = [
       en: "Modular full-stack architecture from scratch. FastAPI REST API for schedule sync and persistence, React Native front with offline mode. Designed from day one to scale toward collaborative features.",
     },
     result: {
-      fr: "Parti d'un besoin perso, publié sur l'App Store (version 1.1.0) et adopté par 150 étudiants par simple bouche-à-oreille : parsing ICS robuste, mode hors-ligne opérationnel, architecture prête pour de nouvelles fonctionnalités.",
-      en: "Started as a personal need, shipped on the App Store (version 1.1.0) and picked up by 150 students through word of mouth alone: robust ICS parsing, working offline mode, an architecture ready for new features.",
+      fr: "Parti d'un besoin perso, publié sur l'App Store (version 1.1.0) et adopté par simple bouche-à-oreille : plus de 160 téléchargements, dont plus de 150 utilisateurs actifs. Côté technique : parsing ICS robuste, mode hors-ligne opérationnel, architecture prête pour de nouvelles fonctionnalités.",
+      en: "Started as a personal need, shipped on the App Store (version 1.1.0) and picked up through word of mouth alone: 160+ downloads, including 150+ active users. On the technical side: robust ICS parsing, working offline mode, an architecture ready for new features.",
     },
     proves: {
       fr: "Que je conçois des architectures full-stack propres et évolutives, pas juste du code qui marche une fois.",
@@ -141,7 +143,8 @@ export const projects: Project[] = [
     },
     stack: ["React Native", "FastAPI", "Python", "SQLite", "ICS / ADE"],
     metrics: [
-      { value: "150", label: { fr: "téléchargements", en: "downloads" } },
+      { value: "160+", label: { fr: "téléchargements App Store", en: "App Store downloads" } },
+      { value: "150+", label: { fr: "utilisateurs actifs", en: "active users" } },
     ],
     statusTag: { fr: "En production · App Store", en: "Live · App Store" },
     links: [
@@ -167,6 +170,8 @@ export const projects: Project[] = [
   {
     id: "codelight",
     name: "Codelight",
+    // Masqué tant que le projet n'est pas construit : repasser à false pour le réafficher.
+    hidden: true,
     kind: {
       fr: "IA · RAG sur du code",
       en: "AI · RAG over code",

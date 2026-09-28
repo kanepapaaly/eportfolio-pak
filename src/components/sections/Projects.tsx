@@ -19,9 +19,11 @@ export function Projects() {
         />
 
         <div className="mt-14 flex flex-col gap-6 sm:gap-8">
-          {projects.map((project, i) => (
-            <ProjectCard key={project.id} project={project} index={i} />
-          ))}
+          {projects
+            .filter((project) => !project.hidden)
+            .map((project, i) => (
+              <ProjectCard key={project.id} project={project} index={i} />
+            ))}
         </div>
       </div>
     </section>
