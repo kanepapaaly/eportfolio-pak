@@ -4,6 +4,7 @@ import Image from "next/image";
 import { motion, useReducedMotion } from "framer-motion";
 import { useLanguage } from "@/lib/i18n";
 import type { Project, RoadmapStep } from "@/data/projects";
+import { CountUp } from "@/components/ui/CountUp";
 
 function LinkIcon({ kind }: { kind: Project["links"][number]["kind"] }) {
   if (kind === "code") {
@@ -127,7 +128,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
                 >
                   <dt className="mono-label">{tr(metric.label)}</dt>
                   <dd className="mt-auto pt-1.5 text-2xl font-semibold tracking-tight text-ink">
-                    {metric.value}
+                    <CountUp value={metric.value} />
                   </dd>
                 </div>
               ))}
