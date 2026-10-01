@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     template: "%s · Papa Aly Kane",
   },
   description:
-    "Étudiant M1 Informatique, disponible en 2026 / 2027 en IA, Data et développement Full-Stack. Des produits réels, livrés et testés par de vrais utilisateurs.",
+    "Étudiant M2 Informatique, disponible en 2026 / 2027 en IA, Data et développement Full-Stack. Des produits réels, livrés et testés par de vrais utilisateurs.",
   keywords: [
     "Papa Aly Kane",
     "alternance",

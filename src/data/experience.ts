@@ -30,6 +30,9 @@ export const education: TimelineItem[] = [
       "Bases de données",
       "Cryptographie",
       "Réseaux",
+      "Agile / Scrum",
+      "DevOps",
+      "Conception d'API",
     ],
   },
   {
