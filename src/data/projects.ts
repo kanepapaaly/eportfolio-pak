@@ -12,9 +12,9 @@ export type ProjectImage = {
   alt: Localized;
 };
 
-/** A single usage figure. Kept as a pre-formatted string: these are read, not computed. */
+/** A single usage figure. Kept as a pre-formatted string: these are read, not computed. Localized when it contains words. */
 export type ProjectMetric = {
-  value: string;
+  value: string | Localized;
   label: Localized;
 };
 
@@ -262,7 +262,7 @@ export const projects: Project[] = [
     stack: ["React", "TypeScript", "Vite", "Tailwind", "FastAPI", "PostgreSQL / Supabase", "Resend"],
     metrics: [
       { value: "150+", label: { fr: "rendez-vous pris en ligne", en: "bookings taken online" } },
-      { value: "5 mois", label: { fr: "en production sans interruption", en: "in production without downtime" } },
+      { value: { fr: "5 mois", en: "5 months" }, label: { fr: "en production sans interruption", en: "in production without downtime" } },
     ],
     statusTag: { fr: "En production", en: "In production" },
     links: [

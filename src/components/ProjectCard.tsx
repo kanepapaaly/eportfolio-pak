@@ -121,17 +121,20 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
           {/* Usage figures: rendered only when the project has real ones */}
           {metrics.length > 0 && (
             <dl className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-3">
-              {metrics.map((metric) => (
-                <div
-                  key={metric.value + tr(metric.label)}
-                  className="flex h-full flex-col rounded-xl border border-border bg-bg px-4 py-3"
-                >
-                  <dt className="mono-label">{tr(metric.label)}</dt>
-                  <dd className="mt-auto pt-1.5 text-2xl font-semibold tracking-tight text-ink">
-                    <CountUp value={metric.value} />
-                  </dd>
-                </div>
-              ))}
+              {metrics.map((metric) => {
+                const value = typeof metric.value === "string" ? metric.value : tr(metric.value);
+                return (
+                  <div
+                    key={metric.label.fr}
+                    className="flex h-full flex-col rounded-xl border border-border bg-bg px-4 py-3"
+                  >
+                    <dt className="mono-label">{tr(metric.label)}</dt>
+                    <dd className="mt-auto pt-1.5 text-2xl font-semibold tracking-tight text-ink">
+                      <CountUp value={value} />
+                    </dd>
+                  </div>
+                );
+              })}
             </dl>
           )}
 

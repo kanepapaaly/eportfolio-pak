@@ -1,51 +1,54 @@
 "use client";
 
 import { animate, useInView, useReducedMotion } from "framer-motion";
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 
 // Leading number of a pre-formatted figure: "2 000+", "17,7 %", "5 mois".
 const NUMBER = /^(\d{1,3}(?:[   ]\d{3})*|\d+)(?:,(\d+))?/;
 
-/** Counts a pre-formatted figure up from 0 when it scrolls into view. */
+/** Rewrite the leading number of a figure, keeping its separators and suffix. */
+function withNumber(value: string, n: number) {
+  const match = value.match(NUMBER);
+  if (!match) return value;
+  const [whole, int, dec = ""] = match;
+  const separator = int.match(/[   ]/)?.[0] ?? "";
+  const [i, d] = n.toFixed(dec.length).split(".");
+  const grouped = separator ? i.replace(/\B(?=(\d{3})+(?!\d))/g, separator) : i;
+  return grouped + (d ? "," + d : "") + value.slice(whole.length);
+}
+
+function numberOf(value: string) {
+  const match = value.match(NUMBER);
+  if (!match) return null;
+  return Number(match[1].replace(/\D/g, "") + "." + (match[2] ?? "0"));
+}
+
+/** Counts a pre-formatted figure up from 0 the first time it scrolls into view. */
 export function CountUp({ value }: { value: string }) {
   const ref = useRef<HTMLSpanElement>(null);
   const inView = useInView(ref, { once: true, margin: "-60px" });
   const reduce = useReducedMotion();
-
-  const match = value.match(NUMBER);
-  const animated = match !== null && !reduce;
+  const target = numberOf(value);
+  const countable = target !== null && !reduce;
+  // 0 before the figure is seen, 1 once counted. Switching language keeps it at 1.
+  const [progress, setProgress] = useState(0);
 
   useEffect(() => {
-    if (!match || !inView || reduce) return;
-    const [whole, int, dec = ""] = match;
-    const separator = int.match(/[   ]/)?.[0] ?? "";
-    const suffix = value.slice(whole.length);
-    const target = Number(int.replace(/\D/g, "") + "." + (dec || "0"));
-
-    const format = (n: number) => {
-      const [i, d] = n.toFixed(dec.length).split(".");
-      const grouped = separator ? i.replace(/\B(?=(\d{3})+(?!\d))/g, separator) : i;
-      return grouped + (d ? "," + d : "") + suffix;
-    };
-
-    const controls = animate(0, target, {
+    if (!countable || !inView) return;
+    const controls = animate(0, 1, {
       duration: 1.4,
       ease: [0.22, 1, 0.36, 1],
-      onUpdate: (n) => {
-        if (ref.current) ref.current.textContent = format(n);
-      },
+      onUpdate: setProgress,
     });
     return () => controls.stop();
-    // match is derived from value
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [inView, reduce, value]);
+  }, [countable, inView]);
 
-  // Start at 0 when animating; the full value is exposed to screen readers.
-  const initial = animated ? value.replace(NUMBER, (_, __, dec?: string) => (dec ? "0," + "0".repeat(dec.length) : "0")) : value;
+  const shown = countable ? withNumber(value, target * progress) : value;
 
+  // Screen readers always get the real figure.
   return (
     <span ref={ref} className="tabular-nums" aria-label={value}>
-      {initial}
+      {shown}
     </span>
   );
 }
